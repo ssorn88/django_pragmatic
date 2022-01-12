@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 
-
 # Create your views here.
 from django.urls import reverse, reverse_lazy
 from django.views.generic import CreateView
@@ -24,7 +23,8 @@ def hello_world(request):
 
     else:
         hello_world_list = HelloWorld.objects.all()
-        return render(request, 'accountapp/hello_world.html', context = {'hello_world_list': hello_world_list})
+        return render(request, 'accountapp/hello_world.html', context={'hello_world_list': hello_world_list})
+
 
 class AccountCreateView(CreateView):
     model = User
